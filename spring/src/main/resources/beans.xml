@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="calculadora" class="com.example.Calculadora">
+    <context:component-scan base-package="com.example"/>
+
+  <!--  <bean id="calculadora" class="com.example.Calculadora" scope="prototype">
     </bean>
 
     <bean id="gestorFacturas" class="com.example.GestorFacturas">
-        <constructor-arg name="calculadora" value="calculadora"></constructor-arg>
-        <constructor-arg name="nombre" value="Facturator 3000"></constructor-arg>
-    </bean>
+         <constructor-arg name="calculadora" ref="calculadora"/>
+            <constructor-arg name="nombre" value="Facturator 3000"/>
+    </bean> -->
 
 </beans>
